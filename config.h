@@ -143,6 +143,7 @@ static const Key keys[] = {
 	{0, XF86XK_AudioMicMute, spawn, {.v=mutesoundinput}},
 	{0, XF86XK_MonBrightnessUp, spawn, {.v=upbrightness}},
 	{0, XF86XK_MonBrightnessDown, spawn, {.v=downbrightness}},
+        {MODKEY|ShiftMask, XK_l, spawn, SHCMD("slock")},
 };
 
 /* button definitions */
