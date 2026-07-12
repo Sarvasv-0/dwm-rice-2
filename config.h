@@ -90,6 +90,7 @@ static const char *mutesoundoutput[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK
 static const char *mutesoundinput[] = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
 static const char *upbrightness[] = {"light", "-A", "5", NULL};
 static const char *downbrightness[] = {"light", "-U", "5", NULL};
+static const char *lockthescreen[] = {"i3lock-fancy-rapid", "10", "pixel", NULL};
 
 
 static const Key keys[] = {
@@ -143,7 +144,7 @@ static const Key keys[] = {
 	{0, XF86XK_AudioMicMute, spawn, {.v=mutesoundinput}},
 	{0, XF86XK_MonBrightnessUp, spawn, {.v=upbrightness}},
 	{0, XF86XK_MonBrightnessDown, spawn, {.v=downbrightness}},
-        {MODKEY|ShiftMask, XK_l, spawn, SHCMD("slock")},
+        {MODKEY|ShiftMask, XK_l, spawn, { .v = lockthescreen } },
 };
 
 /* button definitions */
